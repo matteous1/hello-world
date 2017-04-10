@@ -1,0 +1,223 @@
+.contenitore {
+    width: 80%;
+    margin: auto;
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+.contenitore {
+    width: 100%;
+    margin: auto;
+}
+}
+
+@media (max-width: 767px) {
+.contenitore {
+    width: 100%;
+    margin: auto;
+}
+}
+
+.bodybk {
+    background-image: url("http://www.confimiemilia.it/wp-content/uploads/2016/08/2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;        
+    width: 100%;            
+    margin-left: auto;      
+    margin-right: auto;
+}
+
+.bianco {
+    color: #ffffff;
+}
+
+.bordo_blu {
+    border-bottom: 2px solid #0397d6;
+    font-size: 40px;
+    padding-bottom: 8px;
+    margin-bottom: 25px; 
+}
+
+.margin1 {
+    margin-top: -25px;
+}
+
+/*
+.disp {
+    display: inline;
+}
+
+
+.center {
+    display: table;
+    margin: auto;
+}
+
+
+.disp{
+    display: inline-block;
+    margin: 0 auto;
+}
+*/
+
+.contenitore2 {
+    width: 80%;
+    margin: auto;
+}
+
+
+.piccolo {
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    float: left;
+    width: 25%;
+}
+
+.linea {
+    display: inline-block;
+}
+
+.imgcenter {
+    text-align: right;
+}
+
+.allinea {
+    float: left;
+    width: 20%;
+}
+
+.imgcent {
+    display: block;
+    margin: auto;
+}
+
+.background {
+    background-image: url('http://www.confimiemilia.it/wp-content/uploads/2016/08/a.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.layer {
+    background-color: rgba(18, 29, 47, 0.96);
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 200px 20px 200px 20px;
+}
+
+.div-diviso {
+    width: 100%;
+    position: relative;
+}
+
+.div-diviso-contenitore {
+    width: 17%;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+.div-diviso img {
+    width: 100%;
+    position: relative;
+}
+
+.div-diviso .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: scale(0.1);
+  -webkit-transform: scale(0.1);
+  -moz-transform: scale(0.1);
+  -ms-transform: scale(0.1);
+  -o-transform: scale(0.1);
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+.div-diviso:hover .overlay {
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  visibility: visible;
+  /*
+  border: 3px solid #ffffff;
+  transform: border 2.75s;
+  */
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+ .layer {
+    text-align: center;
+}
+.div-diviso-contenitore {
+    width: 47%;
+    margin: 10px;
+}
+}
+
+@media (max-width: 767px) {
+ .layer {
+    text-align: center;
+}
+.div-diviso-contenitore {
+    width: 98%;
+    margin: 5px;
+}
+}
+
+.div-diviso .overlay:before, .div-diviso .overlay:after { /* Assegno una transizione su AFTER e BEFORE */
+    content: ''; 
+    -webkit-transition: all 0.6s ease-in-out;
+    -o-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    z-index: 9; /* uso z-index per fare in modo che il bordo stia sopra a tutto */ 
+}
+
+.div-diviso .overlay:after { /* Creo un elemento che mi permetterà di avere i bordi a destra e a sinistra */
+    content: '';
+    width: 0; /* Creo un elemento che subito ha larghezza 0 ma che poi diventerà 100% (effetto allungamento bordo) */
+    height: 100%; /* Lo creo già alto al 100% si sta parlando del bordo sopra e del bordo sotto */
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    border-top: 3px solid #20bed0; /* Creo il bordo sopra che per ora non si vedrà dato che la width è 0 (non esiste) */
+    border-bottom: 3px solid #20bed0; /* Creo il bordo sotto che per ora non si vedrà dato che la width è 0 (non esiste) */
+}
+
+.div-diviso .overlay:before {
+    content: '';
+    width: 100%; /* Lo creo già alto al 100% si sta parlando del bordo dx e del bordo sx */
+    height: 0; /* Creo un elemento che subito ha height 0 ma che poi diventerà 100% (effetto allungamento bordo) */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-left: 3px solid #20bed0; /* Creo il bordo sx e il dx che per ora non si vedranno dato che che l'altezza è uguale a 0 */
+    border-right: 3px solid #20bed0;
+}
+
+.div-diviso:hover .overlay:before, .div-diviso:hover .overlay:after { /* Cosa succede quando vado sul div? */
+    height: 100%; /* l'altezza diventerà del 100% quindi usciranno i bordi dx e sx */ 
+    top: 0; 
+    width: 100%; /* La larghezza diventerà del 100% quindi usciranno i bordi sopra e sotto */
+    left: 0;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
